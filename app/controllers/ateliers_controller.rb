@@ -1,0 +1,2 @@
+class AteliersController < ApplicationController
+end
