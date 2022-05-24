@@ -1,12 +1,21 @@
 
-  <h1>all ateliers</h1>
 
-<div >
-
-  <% @ateliers.each do |atelier| %>
-    <%= atelier.name %>
-    <%= atelier.details %>
-    <p>
-      <%= link_to "Show this list", list %>
-    </p>
-  <% end %>
+<div class="container">
+<h1>all ateliers</h1>
+   <div class="main-container">
+    <div class="cards">
+    <% @ateliers.each do |atelier| %>
+      <div class="card mb-3 p-3">
+      <%# <%= cl_image_tag atelier.photo.key, height: 300, width:400, crop :fill %>
+      <%= atelier.name %>
+      <br>
+      <%= atelier.details %>
+      <p>
+      <%= link_to "Show atelier", ateliers_path %>
+      </p>
+      </div>
+    <% end %>
+    </div>
+  <img id="map" src='https://api.mapbox.com/styles/v1/mapbox/streets-v11/static/2.3381,48.8693,10.45,0,0/600x1000?access_token=pk.eyJ1IjoiamdhZWxsZSIsImEiOiJjbDJ1ZjVtY3QwMWhuM2NwaDZydzdkdzJsIn0.shHFmllmDa6i3bi4F75myQ'>
+</div>
+</div>
