@@ -1,0 +1,12 @@
+
+  <h1>all ateliers</h1>
+
+<div >
+
+  <% @ateliers.each do |atelier| %>
+    <%= atelier.name %>
+    <%= atelier.details %>
+    <p>
+      <%= link_to "Show this list", list %>
+    </p>
+  <% end %>
