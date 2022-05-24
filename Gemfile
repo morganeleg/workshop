@@ -5,6 +5,8 @@ ruby "3.0.3"
 
 gem "cloudinary"
 
+gem "pundit"
+
 gem "devise"
 gem 'file_validators'
 
