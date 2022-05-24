@@ -1,2 +1,53 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1595351298020-038700609878?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170);">
+  <div class="container">
+    <h1>Louer votre atelier</h1>
+    <p>à d’autres professionnels</p>
+  </div>
+</div>
+<br>
+<h2 class="josefin">Nos ateliers</h2>
+<h2 class="pacifico">à louer</h2>
+
+<div class="swiper mySwiper">
+  <div class="swiper-wrapper">
+    <div class="swiper-slide">
+      <img src="https://www.agence-vga.com/dashboard/uploads/projets/21/atelier-d-artisans-a-beziers-34--5f04420f67cc1-xl.jpg" />
+    </div>
+    <div class="swiper-slide">
+      <img src="https://www.avantscene-animation.com/wp-content/uploads/2020/11/LGuyRYUQ-1.jpeg" />
+    </div>
+    <div class="swiper-slide">
+      <img src="https://www.parisinfo.com/var/otcp/sites/images/node_43/node_51/node_77884/node_79219/wecandoo-atelier-artisan-%C3%A9b%C3%A9niste-%7C-630x405-%7C-%C2%A9-edouard-eyglunent/18852348-1-fre-FR/Wecandoo-Atelier-artisan-%C3%A9b%C3%A9niste-%7C-630x405-%7C-%C2%A9-Edouard-Eyglunent.jpg" />
+    </div>
+    <div class="swiper-slide">
+      <img src="https://www.parisselectbook.com/wp-content/uploads/2019/11/atelier-froidevaux.jpg" />
+    </div>
+    <div class="swiper-slide">
+      <img src="https://www.amylee.fr/wp-content/uploads/2016/04/CEzIn.jpg" />
+    </div>
+  </div>
+  <div class="swiper-pagination"></div>
+</div>
+
+    <!-- Swiper JS -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+    <!-- Initialize Swiper -->
+    <script>
+      var swiper = new Swiper(".mySwiper", {
+        effect: "coverflow",
+        grabCursor: true,
+        centeredSlides: true,
+        slidesPerView: "auto",
+        coverflowEffect: {
+          rotate: 50,
+          stretch: 0,
+          depth: 100,
+          modifier: 1,
+          slideShadows: true,
+        },
+        pagination: {
+          el: ".swiper-pagination",
+        },
+      });
+    </script>
