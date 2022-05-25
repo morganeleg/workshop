@@ -1,0 +1,10 @@
+<h2>New atelier</h2>
+<%= simple_form_for @atelier do |f| %>
+  <%= f.input :name %>
+  <%= f.input :address %>
+  <%= f.input :style, collection:["Atelier cuisine", "Atelier broderie","Atelier photographie", "Atelier de tissage", "Atelier de cuir", "Atelier de poterie", "Atelier de textile", "Atelier de gravure"]%>
+  <%= f.input :details %>
+ <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+  <%= f.input :price_per_day %>
+  <%= f.button :submit %>
+<% end %>
