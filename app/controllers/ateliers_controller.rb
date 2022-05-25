@@ -2,7 +2,8 @@ class AteliersController < ApplicationController
   before_action :set_atelier, only: [:show, :edit, :update, :destroy]
 
   def index
-    @restaurants = policy_scope(Restaurant)
+    @ateliers = Atelier.all
+
   end
 
   def show
