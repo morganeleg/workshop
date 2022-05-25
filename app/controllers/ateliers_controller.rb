@@ -3,6 +3,7 @@ class AteliersController < ApplicationController
   skip_before_action :authenticate_user!, only: :index
 
   def index
+    @ateliers = Atelier.all
     @ateliers = policy_scope(Atelier)
   end
 
