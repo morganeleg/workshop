@@ -1,9 +1,9 @@
 <div class="container">
 
-  <div class="row title">
-    <h2><%= @atelier.name %></h2>
+  <div class="row header">
+    <h1 class="title"><%= @atelier.name %></h1>
     <p><%= @atelier.style %></p>
-    <p><%= @atelier.address %></p>
+    <p class="strong"><%= @atelier.address %></p>
   </div>
 
   <div class="row photos_atelier">
@@ -21,22 +21,22 @@
   <div class="row container-details">
 
     <div class="col-12 col-md-6 details">
-      <h3>Détails</h3>
+      <h3 class="title">Détails</h3>
       <p><%= @atelier.details %></p>
     </div>
 
     <div class="col-12 col-md-6 card_reservation">
 
-      <h4>Prix par jour : <strong><%= @atelier.price_per_day %>€</strong></h4>
+      <h4>Prix par jour : <span class="strong"><%= @atelier.price_per_day %>€</span></h4>
 
       <div class="dates">
         <div class="start_date">
         <p>ARRIVEE</p>
-        <p><strong>22/05/2024</strong></p>
+        <p class="strong">22/05/2024</p>
         </div>
         <div class="end_date">
         <p>DEPART</p>
-        <p><strong>22/05/2024</strong></p>
+        <p class="strong">22/05/2024</p>
         </div>
       </div>
 
@@ -45,7 +45,7 @@
         <p>TOTAL</p>
         </div>
         <div>
-        <p><strong><%= @atelier.price_per_day %>€</strong></p>
+        <p class="strong"><%= @atelier.price_per_day %>€</p>
         </div>
       </div>
 

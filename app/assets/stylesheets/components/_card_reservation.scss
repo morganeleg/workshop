@@ -7,6 +7,11 @@
   background-color: #FDFAF9;
 
 
+  h4 {
+    font-family: 'Josefin Sans';
+  }
+
+
   .dates {
     display: flex;
     justify-content: space-between;
@@ -36,6 +41,7 @@
     background: #FF3461;
     border: 0.5px solid #FFFFFF;
     border-radius: 13px;
+    text-transform: uppercase;
   }
 
 }

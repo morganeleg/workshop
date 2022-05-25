@@ -1,4 +1,16 @@
+.container {
+  font-family: 'Josefin Sans';
+}
+
 .title {
+  font-family: 'Pacifico';
+}
+
+.strong {
+  font-weight: 700;
+}
+
+.header {
   margin-top: 20px;
 }
 
@@ -17,12 +29,10 @@
 .container-details {
   display: flex;
   justify-content: space-between;
-  margin-top: 20px;
+  margin: 20px auto;
 
   .details {
     width: 48% ;
 
   }
-
-
 }
