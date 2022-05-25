@@ -10,8 +10,8 @@ Serigraphies à Paris
     <div class="list-cards">
     <% @ateliers.each do |atelier| %>
       <div class ="card">
-        <img src="https://source.unsplash.com/random/?sig=${Math.random()}" id="img">
-        <%# <%= cl_image_tag atelier.photo.key, height: 300, width:400, crop :fill %>
+        <%# <img src="https://source.unsplash.com/random/?sig=${Math.random()}" id="img"> %>
+        <%= cl_image_tag atelier.photo.key, height: 300, width:400, crop :fill
         <div class="style-name"><%= atelier.name %>
         </div>
         <div class="style-details"><%= atelier.details %>
