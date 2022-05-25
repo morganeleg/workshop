@@ -25,6 +25,7 @@ class AteliersController < ApplicationController
   end
 
   def edit
+    authorize @atelier
   end
 
   def update
