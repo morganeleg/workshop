@@ -1,0 +1,58 @@
+<div class="container">
+
+  <div class="row header">
+    <h1 class="title"><%= @atelier.name %></h1>
+    <p><%= @atelier.style %></p>
+    <p class="strong"><%= @atelier.address %></p>
+  </div>
+
+  <div class="row photos_atelier">
+    <div class="col-12 col-md-4">
+      <img src="http://archivesetdocumentation.centrepompidou.fr/img-server/BK/AT/AT032/M5050_X0031_AT032_011.jpg" alt="">
+    </div>
+    <div class="col-12 col-md-4">
+      <img src="https://cdn.paris.fr/paris/2021/07/05/huge-1c3dfc53132d6b805c5b73a6b3011b83.jpg" alt="">
+    </div>
+    <div class="col-12 col-md-4">
+      <img src="https://www.pariszigzag.fr/wp-content/uploads/2019/03/atelier-suzanne-valandon-paris-zigag-e1551883982843.jpg" alt="">
+    </div>
+  </div>
+
+  <div class="row container-details">
+
+    <div class="col-12 col-md-6 details">
+      <h3 class="title">Détails</h3>
+      <p><%= @atelier.details %></p>
+    </div>
+
+    <div class="col-12 col-md-6 card_reservation">
+
+      <h4>Prix par jour : <span class="strong"><%= @atelier.price_per_day %>€</span></h4>
+
+      <div class="dates">
+        <div class="start_date">
+        <p>ARRIVEE</p>
+        <p class="strong">22/05/2024</p>
+        </div>
+        <div class="end_date">
+        <p>DEPART</p>
+        <p class="strong">22/05/2024</p>
+        </div>
+      </div>
+
+      <div class="total">
+        <div>
+        <p>TOTAL</p>
+        </div>
+        <div>
+        <p class="strong"><%= @atelier.price_per_day %>€</p>
+        </div>
+      </div>
+
+      <a href="" class="btn">Réservation</a>
+
+    </div>
+
+  </div>
+
+</div>

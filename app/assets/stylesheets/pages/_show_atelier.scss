@@ -1,0 +1,38 @@
+.container {
+  font-family: 'Josefin Sans';
+}
+
+.title {
+  font-family: 'Pacifico';
+}
+
+.strong {
+  font-weight: 700;
+}
+
+.header {
+  margin-top: 20px;
+}
+
+.photos_atelier {
+  display: flex;
+  justify-content: space-around;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+  }
+}
+
+.container-details {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px auto;
+
+  .details {
+    width: 48% ;
+
+  }
+}
