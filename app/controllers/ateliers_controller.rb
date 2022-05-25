@@ -1,6 +1,10 @@
 class AteliersController < ApplicationController
   before_action :set_atelier, only: [:show, :edit, :update, :destroy]
 
+  def index
+    @ateliers = Atelier.all
+  end
+
   def show
   end
 
