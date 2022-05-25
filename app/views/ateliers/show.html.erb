@@ -32,30 +32,15 @@
     </div>
 
     <div class="col-12 col-md-6 card_reservation">
+         <h4>Prix par jour : <span class="strong"><%= @atelier.price_per_day %>€</span></h4>
+          <%= simple_form_for [@atelier, @reservation] do |f| %>
+            <%= f.input :start_date%>
+            <%= f.input :end_date%>
+             <%= f.submit class: "btn btn-primary"%>
+          <% end %>
 
-      <h4>Prix par jour : <span class="strong"><%= @atelier.price_per_day %>€</span></h4>
 
-      <div class="dates">
-        <div class="start_date">
-        <p>ARRIVEE</p>
-        <p class="strong">22/05/2024</p>
-        </div>
-        <div class="end_date">
-        <p>DEPART</p>
-        <p class="strong">22/05/2024</p>
-        </div>
-      </div>
 
-      <div class="total">
-        <div>
-        <p>TOTAL</p>
-        </div>
-        <div>
-        <p class="strong"><%= @atelier.price_per_day %>€</p>
-        </div>
-      </div>
-
-      <a href="" class="btn">Réservation</a>
 
     </div>
 

@@ -19,6 +19,7 @@ class AteliersController < ApplicationController
   end
 
   def show
+    @reservation = Reservation.new
     authorize @atelier
   end
 
