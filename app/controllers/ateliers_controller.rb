@@ -3,9 +3,11 @@ class AteliersController < ApplicationController
 
   def index
     @ateliers = Atelier.all
+
   end
 
   def show
+    authorize @atelier
   end
 
   private
