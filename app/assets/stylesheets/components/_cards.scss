@@ -1,35 +1,34 @@
 
 
 .list-cards {
-
   display: flex;
+  justify-content: space-between;
   align-items: center;
   background-color: white;
-
-  width: 50%;
-  height: 300px;
   padding-top:0;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 16px;
 
 }
-#map {
-  width: 50%;
-  height: 100vh;
-  position: sticky;
-  top: 0;
-  padding-left: 10px;
-  margin-right: 0px;
-}
+// #map {
+//   width: 50%;
+//   height: 100vh;
+//   position: sticky;
+//   top: 0;
+//   padding-left: 10px;
+//   margin-right: 0px;
+// }
 
 .price-left {
   text-align: right;
 }
-.main-container{
+.container{
   background-color: white;
   display: flex;
   justify-content: space-between;
+  min-height: calc(100vh - 192px);
+
 
 }
 .titre {
@@ -41,6 +40,12 @@
 }
 .card {
   border:none;
+  .atelier-info {
+    min-height: 200px;
+  }
+  img {
+    width: 100%;
+  }
 }
 #img {
   width: 300px;
@@ -71,4 +76,5 @@ p {
 body {
   background-color: white;
   margin:10px;
+  padding-bottom: 180px;
 }

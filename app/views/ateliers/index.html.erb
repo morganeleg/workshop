@@ -6,25 +6,31 @@ Serigraphies à Paris
 
 <p>22 ateliers</p>
 
-   <div class="main-container">
+<div class="container">
     <div class="list-cards">
-    <% @ateliers.each do |atelier| %>
-      <div class ="card">
-        <%# <img src="https://source.unsplash.com/random/?sig=${Math.random()}" id="img"> %>
-        <%= cl_image_tag atelier.photo.key, height: 300, width:400, crop :fill
-        <div class="style-name"><%= atelier.name %>
-        </div>
-        <div class="style-details"><%= atelier.details %>
-       </div>
-
-          <div class="price-left">
-            <%= atelier.price_per_day %>€/jour
-            <p>
-            <%= link_to "Show atelier", ateliers_path %>
-            </p>
+      <% @ateliers.each do |atelier| %>
+        <div class ="card">
+          <% if atelier.photos.attached? %>
+          <%= cl_image_tag(atelier.photos.first.key,
+            width: 400, height: 300, crop: :fill) %>
+          <% else %>
+            <%= image_tag("https://picsum.photos/400/300",
+            width: 400, height: 300, crop: :fill)%>
+          <% end %>
+          <div class="atelier-info px-4">
+            <div class="style-name"><%= atelier.name %>
+            </div>
+            <div class="style-details"><%= atelier.address %>
+            </div>
+            <div class="price-left">
+              <%= atelier.price_per_day %>€/jour
+              <p>
+              <%= link_to "Show atelier", atelier_path(atelier) %>
+              </p>
+            </div>
           </div>
-      </div>
-    <% end %>
-  </div>
-  <img id="map" src='https://api.mapbox.com/styles/v1/mapbox/streets-v11/static/2.3381,48.8693,10.45,0,0/600x1000?access_token=pk.eyJ1IjoiamdhZWxsZSIsImEiOiJjbDJ1ZjVtY3QwMWhuM2NwaDZydzdkdzJsIn0.shHFmllmDa6i3bi4F75myQ'>
+        </div>
+      <% end %>
+    </div>
+  <%# <img id="map" src='https://api.mapbox.com/styles/v1/mapbox/streets-v11/static/2.3381,48.8693,10.45,0,0/600x1000?access_token=pk.eyJ1IjoiamdhZWxsZSIsImEiOiJjbDJ1ZjVtY3QwMWhuM2NwaDZydzdkdzJsIn0.shHFmllmDa6i3bi4F75myQ'> %>
 </div>
