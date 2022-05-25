@@ -1,25 +1,74 @@
-.cards {
+
+
+.list-cards {
 
   display: flex;
   align-items: center;
-  justify-content: space-around;
-  cursor: pointer;
+  background-color: white;
 
-
+  width: 50%;
+  height: 300px;
+  padding-top:0;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 16px;
+
 }
 #map {
-  width: 100%;
+  width: 50%;
   height: 100vh;
   position: sticky;
   top: 0;
   padding-left: 10px;
+  margin-right: 0px;
 }
-.main-container {
-  display: flex;
-}
+
 .price-left {
   text-align: right;
+}
+.main-container{
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+
+}
+.titre {
+  background-color: white;
+  font-family: pacifico;
+  font-weight: 400;
+  font-size: 36px;
+
+}
+.card {
+  border:none;
+}
+#img {
+  width: 300px;
+  height: 400px;
+  border-radius: 10px;
+  margin: 0px;
+}
+p {
+  font-family: Josefin Sans;
+
+  font-size: 24px;
+  text-align: center;
+}
+.style-details {
+  font-family: Josefin Sans;
+  font-size: 20px;
+}
+.style-name {
+  font-family: pacifico;
+  font-size: 20px;
+}
+.price-left {
+  font-family: Josefin Sans;
+  color: #FF3461;
+  font-size: 15px;
+}
+
+body {
+  background-color: white;
+  margin:10px;
 }
