@@ -2,10 +2,24 @@ class AteliersController < ApplicationController
   before_action :set_atelier, only: [:show, :edit, :update, :destroy]
 
   def index
-    @ateliers = Atelier.all
+    @ateliers = policy_scope(Atelier)
+  end
+
+  def new
+    @atelier = Atelier.new
+    authorize @atelier
+  end
+
+  def create
+    @atelier = Atelier.new(atelier_params)
+    @atelier.user = current_user
+    @atelier.save
+    authorize @atelier
+    redirect_to atelier_path(@atelier)
   end
 
   def show
+    @reservation = Reservation.new
     authorize @atelier
   end
 
@@ -30,6 +44,7 @@ class AteliersController < ApplicationController
   end
 
   def atelier_params
-    params.require(:atelier).permit(:name, :address, :style, :details, :price_per_day)
+    params.require(:atelier).permit(:name, :address, :style, :details, :price_per_day, photos: [])
   end
+
 end
