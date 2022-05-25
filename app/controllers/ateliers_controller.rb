@@ -11,7 +11,7 @@ class AteliersController < ApplicationController
   end
 
   def create
-    @atelier = Atelier.new(list_params)
+    @atelier = Atelier.new(atelier_params)
     @atelier.user = current_user
     @atelier.save
     authorize @atelier
@@ -23,13 +23,27 @@ class AteliersController < ApplicationController
     authorize @atelier
   end
 
+  def edit
+  end
+
+  def update
+    @atelier.update(atelier_params)
+    redirect_to dashboard_path(current_user)
+  end
+
+  def destroy
+    @atelier.destroy
+    authorize @atelier
+    redirect_to dashboard_path(current_user), status: :see_other
+  end
+
   private
 
   def set_atelier
     @atelier = Atelier.find(params[:id])
   end
 
-  def list_params
+  def atelier_params
     params.require(:atelier).permit(:name, :address, :style, :details, :price_per_day, photos: [])
   end
 

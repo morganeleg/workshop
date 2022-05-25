@@ -13,6 +13,14 @@ class AtelierPolicy < ApplicationPolicy
     true
   end
 
+  def destroy?
+    user == record.user
+  end
+
+  def edit?
+    user == record.user
+  end
+
 
   def new?
     true
