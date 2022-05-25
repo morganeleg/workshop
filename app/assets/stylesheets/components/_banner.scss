@@ -1,0 +1,46 @@
+
+.banner {
+  background-size: cover;
+  background-position: center;
+  padding: 150px 0;
+}
+
+.banner h1 {
+  // margin: 0;
+  // color: white;
+  // text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  // font-size: 32px;
+  // font-weight: bold;
+
+  font-family: 'Pacifico';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 64px;
+  line-height: 62px;
+  /* or 97% */
+
+  display: flex;
+  align-items: center;
+
+  color: #FFFFFF;
+}
+
+.banner p {
+  // font-size: 20px;
+  // color: white;
+  // opacity: .7;
+  // text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+
+  font-family: 'Josefin Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 21px;
+  line-height: 32px;
+  /* or 152% */
+
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.12em;
+
+  color: #FFFFFF;
+}
