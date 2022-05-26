@@ -4,9 +4,9 @@ Rails.application.routes.draw do
 
   resources :ateliers
   get "dashboard", to: "pages#dashboard"
-  
+
   resources :ateliers do
-    resources :reservations, only: [:create]
+    resources :reservations, only: [:create, :destroy]
   end
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
