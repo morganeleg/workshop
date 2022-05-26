@@ -5,6 +5,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_one_attached :avatar
   has_many :ateliers
-  has_many :reservations, through: :ateliers
-  has_many :reserved, class_name: :Reservation
+  has_many :reservations, through: :ateliers, dependent: :destroy
+  has_many :reserved, class_name: :Reservation, dependent: :destroy
 end
