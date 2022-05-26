@@ -3,8 +3,18 @@ class AteliersController < ApplicationController
   skip_before_action :authenticate_user!, only: :index
 
   def index
-    @ateliers = Atelier.all
     @ateliers = policy_scope(Atelier)
+
+    return unless params[:query].present?
+
+    if params[:query][:address].present? && params[:query][:style].present?
+      @ateliers = @ateliers.near(params[:query][:address].to_s, 10)
+      @ateliers = @ateliers.search_by_style(params[:query][:style])
+    elsif !params[:query][:address].present? && params[:query][:style].present?
+      @ateliers = @ateliers.search_by_style(params[:query][:style])
+    elsif params[:query][:address].present? && !params[:query][:style].present?
+      @ateliers = @ateliers.near(params[:query][:address].to_s, 10)
+    end
   end
 
   def new
