@@ -7,21 +7,19 @@
   background-color: white;
   padding-top:0;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 16px;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 20px;
+  flex-grow: 1;
 
 }
-// #map {
-//   width: 50%;
-//   height: 100vh;
-//   position: sticky;
-//   top: 0;
-//   padding-left: 10px;
-//   margin-right: 0px;
-// }
+#map {
+  height: 100vh;
+  position: sticky;
+  top: 0;
+}
 
 .price-left {
-  text-align: right;
+  text-align: left;
 }
 .container{
   // background-color: white;
@@ -39,12 +37,16 @@
 
 }
 .card {
+
   border:none;
+
   .atelier-info {
-    min-height: 200px;
+    min-height: 150px;
+    width: 100%;
   }
   img {
     width: 100%;
+    border-radius: 20px;
   }
 }
 #img {
@@ -55,22 +57,24 @@
 }
 p {
   font-family: Josefin Sans;
-
   font-size: 24px;
   text-align: center;
 }
 .style-details {
   font-family: Josefin Sans;
   font-size: 20px;
+  min-height: 60px;
 }
 .style-name {
   font-family: pacifico;
   font-size: 20px;
+  min-height: 60px;
 }
 .price-left {
   font-family: Josefin Sans;
   color: #FF3461;
   font-size: 15px;
+  font-weight: bold;
 }
 
 body {

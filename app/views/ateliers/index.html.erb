@@ -4,18 +4,19 @@
 Serigraphies à Paris
 </div>
 
-<p>22 ateliers</p>
+22 ateliers
 
 <div class="container">
-    <div class="list-cards">
+  <div class="row">
+    <div class="list-cards col-6">
       <% @ateliers.each do |atelier| %>
         <div class ="card">
           <% if atelier.photos.attached? %>
-            <%= cl_image_tag(atelier.photos.first.key,
-            width: 400, height: 300, crop: :fill) %>
+            <%= link_to (cl_image_tag(atelier.photos.first.key,
+            width: 400, height: 300, crop: :fill)), atelier_path(atelier) %>
           <% else %>
-            <%= image_tag("https://picsum.photos/400/300",
-            width: 400, height: 300, crop: :fill)%>
+            <%= link_to (image_tag("https://picsum.photos/400/300",
+            width: 400, height: 300, crop: :fill)),  atelier_path(atelier)%>
           <% end %>
           <div class="atelier-info px-4">
             <div class="style-name"><%= atelier.name %>
@@ -23,21 +24,25 @@ Serigraphies à Paris
             <div class="style-details"><%= atelier.address %>
             </div>
             <div class="price-left">
-              <%= atelier.price_per_day %>€/jour
-              <p>
+              <%= atelier.price_per_day%>€/jour
+              <%# <p>
               <%= link_to "Show atelier", atelier_path(atelier) %>
-              </p>
+              <%# </p> %>
             </div>
           </div>
         </div>
       <% end %>
     </div>
-    <div style="width: 100%; height: 600px;"
-      data-controller="map"
-      data-map-markers-value="<%= @markers.to_json %>"
-      data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+    <div class="col-6">
+      <div id="map">
+        <div style="width: 100%; height: 600px;"
+          data-controller="map"
+          data-map-markers-value="<%= @markers.to_json %>"
+          data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+        </div>
+      </div>
     </div>
-  <%# <img id="map" src='https://api.mapbox.com/styles/v1/mapbox/streets-v11/static/2.3381,48.8693,10.45,0,0/600x1000?access_token=pk.eyJ1IjoiamdhZWxsZSIsImEiOiJjbDJ1ZjVtY3QwMWhuM2NwaDZydzdkdzJsIn0.shHFmllmDa6i3bi4F75myQ'> %>
+  </div> <%# <img id="map" src='https://api.mapbox.com/styles/v1/mapbox/streets-v11/static/2.3381,48.8693,10.45,0,0/600x1000?access_token=pk.eyJ1IjoiamdhZWxsZSIsImEiOiJjbDJ1ZjVtY3QwMWhuM2NwaDZydzdkdzJsIn0.shHFmllmDa6i3bi4F75myQ'> %>
 </div>
 
 <% console %>
