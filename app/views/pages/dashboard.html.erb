@@ -1,26 +1,62 @@
 <%# --User-- %>
+<% if current_user.avatar.attached? %>
+  <%= cl_image_tag(current_user.avatar.first.key,
+  width: 50, height: 50, crop: :fill) %>
+  <% else %>
+  <%= image_tag("https://picsum.photos/400/300",
+  width: 50, height: 50, crop: :fill)%>
+<% end %>
 <h2><%= current_user.first_name %> <%= current_user.last_name %></h2>
 <p><%= current_user.email %></p>
 <p><%= current_user.address %></p>
 <p><%= current_user.phone_number %></p>
 
+
 <%# --Ateliers à louer-- %>
 <ul>
   <% current_user.ateliers.each do |atelier| %>
+    <% if atelier.photos.attached? %>
+    <%= cl_image_tag(atelier.photos.first.key,
+    width: 200, height: 150, crop: :fill) %>
+    <% else %>
+    <%= image_tag("https://picsum.photos/400/300",
+    width: 200, height: 150, crop: :fill)%>
+    <% end %>
     <li><%= link_to atelier.name, atelier_path(atelier.id) %></li>
     <li><%= link_to 'Edit', edit_atelier_path(atelier.id)%></li>
     <li><%= link_to "Delete",
     atelier_path(atelier),
     data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
-%></li>
+    %></li>
   <% end %>
 </ul>
 
 <%= link_to 'New atelier', new_atelier_path %>
 
 <%# --Réservations dans atelier(s) du user-- %>
-
-
-
+<h2>Notifications:</h2>
+<ul>
+  <% current_user.reservations.each do |reservation| %>
+    <li><%= "Réservation de #{reservation.user.first_name} #{reservation.user.last_name}" %></li>
+    <li><%= reservation.atelier.name %></li>
+    <li><%= reservation.start_date %></li>
+    <li><%= reservation.end_date %></li>
+    <li><%= link_to "Annuler",
+    dashboard_path(current_user),
+    data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+    %></li>
+  <% end %>
+</ul>
 
 <%# --Réservations dans atelier(s) d'autre(s) user(s)-- %>
+<h2>Mes réservations:</h2>
+<ul>
+  <% current_user.reserved.each do |reservation| %>
+    <li><%= reservation.atelier.name %></li>
+    <li><%= reservation.start_date %></li>
+    <li><%= reservation.end_date %></li>
+    <li><%= link_to "Annuler",
+    dashboard_path(current_user),
+    data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+%></li>
+  <% end %>

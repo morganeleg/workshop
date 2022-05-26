@@ -1,0 +1,5 @@
+<% if atelier.photos.attached? %>
+  <%= cl_image_tag(atelier.photos.first.key)%>
+  <% end %>
+<h2><%= atelier.name%></h2>
+<p>Price: <%= atelier.price_per_day%>€/jour</p>

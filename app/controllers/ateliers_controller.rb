@@ -6,7 +6,6 @@ class AteliersController < ApplicationController
     @ateliers = policy_scope(Atelier)
 
     return unless params[:query].present?
-
     if params[:query][:address].present? && params[:query][:style].present?
       @ateliers = @ateliers.near(params[:query][:address].to_s, 10)
       @ateliers = @ateliers.search_by_style(params[:query][:style])
@@ -15,6 +14,14 @@ class AteliersController < ApplicationController
     elsif params[:query][:address].present? && !params[:query][:style].present?
       @ateliers = @ateliers.near(params[:query][:address].to_s, 10)
     end
+    @markers = @ateliers.geocoded.map do |atelier|
+      {
+        lat: atelier.latitude,
+        lng: atelier.longitude,
+        info_window: render_to_string(partial: "info_window", locals: {atelier: atelier})
+      }
+    end
+
   end
 
   def new
