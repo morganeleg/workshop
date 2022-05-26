@@ -36,7 +36,11 @@
           <%= simple_form_for [@atelier, @reservation] do |f| %>
             <%= f.input :start_date%>
             <%= f.input :end_date%>
-             <%= f.submit class: "btn btn-primary"%>
+            <% if @atelier.user == current_user %>
+              <%= f.submit class: "btn btn-primary disabled"%>
+            <% else %>
+              <%= f.submit class: "btn btn-primary"%>
+            <% end %>
           <% end %>
 
 

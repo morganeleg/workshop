@@ -41,9 +41,7 @@
     <li><%= reservation.atelier.name %></li>
     <li><%= reservation.start_date %></li>
     <li><%= reservation.end_date %></li>
-    <li><%= link_to "Annuler",
-    dashboard_path(current_user),
-    data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+    <li><%= link_to "Annuler", atelier_reservation_path(reservation.atelier, reservation), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
     %></li>
   <% end %>
 </ul>
@@ -55,8 +53,5 @@
     <li><%= reservation.atelier.name %></li>
     <li><%= reservation.start_date %></li>
     <li><%= reservation.end_date %></li>
-    <li><%= link_to "Annuler",
-    dashboard_path(current_user),
-    data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
-%></li>
+    <li><%= link_to "Annuler", atelier_reservation_path(reservation.atelier, reservation), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %></li>
   <% end %>
