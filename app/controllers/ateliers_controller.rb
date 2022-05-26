@@ -3,8 +3,15 @@ class AteliersController < ApplicationController
   skip_before_action :authenticate_user!, only: :index
 
   def index
-    @ateliers = Atelier.all
     @ateliers = policy_scope(Atelier)
+    @markers = @ateliers.geocoded.map do |atelier|
+      {
+        lat: atelier.latitude,
+        lng: atelier.longitude,
+        info_window: render_to_string(partial: "info_window", locals: {atelier: atelier})
+      }
+    end
+
   end
 
   def new
