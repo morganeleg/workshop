@@ -1,19 +1,22 @@
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1595351298020-038700609878?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170);">
 
   <div class="container">
-    <%= simple_form_for :query, url: ateliers_path, wrapper: :inline_form, html: { class: "row row-cols-lg-auto g-3 align-items-center" }, method: "GET" do |f| %>
-      <%= f.input :style,
-                  collection:["Atelier cuisine", "Atelier broderie","Atelier photographie", "Atelier de tissage", "Atelier de cuir", "Atelier de poterie", "Atelier de textile", "Atelier de gravure"],
-                  :input_html => { :class => 'input' } %>
-      <%= f.input :address,
-                  input_html: {data: {address_autocomplete_target: "address"}, class: "d-none"},
-                  wrapper_html: {data: {controller: "address-autocomplete", address_autocomplete_api_key_value: ENV["MAPBOX_API_KEY"]}} %>
-      <div class="col-12">
-        <%= f.button :submit, class: "btn-primary" %>
-      </div>
-    <% end %>
     <h1>Louer votre atelier</h1>
     <p>à d’autres professionnels</p>
+    <%= simple_form_for :query, url: ateliers_path, wrapper: :inline_form, html: { class: "row row-cols-lg-auto g-3 align-items-center search-input" }, method: "GET" do |f| %>
+      <%= f.input :style, label: false, include_blank: "Style d'atelier",
+                  collection:["Atelier cuisine", "Atelier broderie","Atelier photographie", "Atelier de tissage", "Atelier de cuir", "Atelier de poterie", "Atelier de textile", "Atelier de gravure"],
+                  :input_html => { :class => 'input' }, wrapper_html: { class: "m-0"} %>
+      <p class="color-black">Adresse</p>
+      <%= f.input :address,
+                  input_html: {data: {address_autocomplete_target: "address"}, class: "d-none"},
+                  wrapper_html: {class: "m-0", data: {controller: "address-autocomplete", address_autocomplete_api_key_value: ENV["MAPBOX_API_KEY"]}} %>
+      <div class="col-12">
+        <%= button_tag type: "submit" do %>
+          <i class="fa-solid fa-magnifying-glass"></i>
+        <% end %>
+      </div>
+    <% end %>
   </div>
 
 

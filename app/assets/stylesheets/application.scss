@@ -12,3 +12,7 @@
 @import "components/index";
 @import "pages/index";
 @import "@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder";
+
+.content-wrapper {
+  min-height: calc(100vh - 66px - 126px);
+}

@@ -123,11 +123,11 @@ atelier_nine.save!
 
 atelier_ten = Atelier.new(atelier10)
 file1 = URI.open("https://www.ensad.fr/sites/default/files/styles/adaptive_width_719/adaptive-image/public/dlc_9573_1.jpg?itok=hISGcOuA")
-file2 = URI.open("https://www.paris-ateliers.org/thumb/?q=90&zc=1&w=1015&h=500&src=/fichier/i_diapo/1331/p1260964.jpg&f=jpg")
-file3 = URI.open("https://www.paris-ateliers.org/thumb/?q=90&zc=1&w=1015&h=500&src=/fichier/i_diapo/1334/p1260957.jpg&f=jpg")
+# file2 = URI.open("https://www.paris-ateliers.org/thumb/?q=90&zc=1&w=1015&h=500&src=/fichier/i_diapo/1331/p1260964.jpg&f=jpg")
+# file3 = URI.open("https://www.paris-ateliers.org/thumb/?q=90&zc=1&w=1015&h=500&src=/fichier/i_diapo/1334/p1260957.jpg&f=jpg")
 atelier_ten.photos.attach(io: file1, filename: "nes.png", content_type: "image/png")
-atelier_ten.photos.attach(io: file2, filename: "nes.png", content_type: "image/png")
-atelier_ten.photos.attach(io: file3, filename: "nes.png", content_type: "image/png")
+# atelier_ten.photos.attach(io: file2, filename: "nes.png", content_type: "image/png")
+# atelier_ten.photos.attach(io: file3, filename: "nes.png", content_type: "image/png")
 atelier_ten.save!
 
 puts "Ateliers created"
@@ -144,31 +144,3 @@ end
 
 puts " Reservations Created"
 puts " Vous etes trop forts!!!!!"
-atelier1 = { name: "Atelier1", address: "2 place du 19 mars 1962 - 93100 Montreuil", style: "Atelier cuisine", details: "Lorem ipsum dolor sit amet. Aut itaque vitae ut facere inventore sit fuga facere aut autem quia aut quidem ipsa. Est eaque nobis est deleniti facilis ut laboriosam omnis a dolor deleniti et quibusdam earum ut sequi quam. Sit quod quia eum labore earum in error explicabo et assumenda enim ut perspiciatis dolorum.", price_per_day: 120, user: user1}
-atelier2 = { name: "Atelier2", address: "ZI de Blavozi - 43700 St Germain Laprade", style: "Atelier broderie", details: "Aut quaerat temporibus ab quibusdam praesentium aut enim debitis rem sint sint ea omnis quia et totam aspernatur. Et velit libero est dolore itaque est maiores enim qui placeat velit et repudiandae itaque. Aut officiis fugiat aut iusto commodi et itaque rerum sed harum eligendi.", price_per_day: 110, user: user1 }
-atelier3 = { name: "Atelier3", address: "24 rue de la mitrie - 44000 Nantes", style: "Atelier photographie", details: "Lorem ipsum dolor sit amet. Aut itaque vitae ut facere inventore sit fuga facere aut autem quia aut quidem ipsa. Est eaque nobis est deleniti facilis ut laboriosam omnis a dolor deleniti et quibusdam earum ut sequi quam. Sit quod quia eum labore earum in error explicabo et assumenda enim ut perspiciatis dolorum.", price_per_day: 90, user: user1 }
-atelier4 = { name: "Atelier4", address: "15 rue Marc Seguin - 75018 Paris", style: "Atelier de gravure", details: "Aut quaerat temporibus ab quibusdam praesentium aut enim debitis rem sint sint ea omnis quia et totam aspernatur. Et velit libero est dolore itaque est maiores enim qui placeat velit et repudiandae itaque. Aut officiis fugiat aut iusto commodi et itaque rerum sed harum eligendi.", price_per_day: 150, user: user1}
-atelier5 = { name: "Atelier5", address: "24 rue Louis-Emilie de la tour d'auvergne - 75009 Paris", style: "Atelier photographie argentique", details: "Lorem ipsum dolor sit amet. Aut itaque vitae ut facere inventore sit fuga facere aut autem quia aut quidem ipsa. Est eaque nobis est deleniti facilis ut laboriosam omnis a dolor deleniti et quibusdam earum ut sequi quam. Sit quod quia eum labore earum in error explicabo et assumenda enim ut perspiciatis dolorum.", price_per_day: 115, user: user1 }
-atelier6 = { name: "Atelier6", address: "46 rue du Bac - 75007 Paris", style: "Atelier de tissage", details: "Aut quaerat temporibus ab quibusdam praesentium aut enim debitis rem sint sint ea omnis quia et totam aspernatur. Et velit libero est dolore itaque est maiores enim qui placeat velit et repudiandae itaque. Aut officiis fugiat aut iusto commodi et itaque rerum sed harum eligendi.", price_per_day: 100, user: user2 }
-atelier7 = { name: "Atelier7", address: "12 avenue rapp - 75007 Paris", style: "Atelier de cuir", details: "Lorem ipsum dolor sit amet. Aut itaque vitae ut facere inventore sit fuga facere aut autem quia aut quidem ipsa. Est eaque nobis est deleniti facilis ut laboriosam omnis a dolor deleniti et quibusdam earum ut sequi quam. Sit quod quia eum labore earum in error explicabo et assumenda enim ut perspiciatis dolorum.", price_per_day: 90, user: user2 }
-atelier8 = { name: "Atelier8", address: "44 avenue de la république - 92320 Châtillon", style: "Atelier de poterie", details: "Aut quaerat temporibus ab quibusdam praesentium aut enim debitis rem sint sint ea omnis quia et totam aspernatur. Et velit libero est dolore itaque est maiores enim qui placeat velit et repudiandae itaque. Aut officiis fugiat aut iusto commodi et itaque rerum sed harum eligendi.", price_per_day: 140, user: user2 }
-atelier9 = { name: "Atelier9", address: "10 rue Mignard - 75116 Paris", style: "atelier de textile", details: "Aut quaerat temporibus ab quibusdam praesentium aut enim debitis rem sint sint ea omnis quia et totam aspernatur. Et velit libero est dolore itaque est maiores enim qui placeat velit et repudiandae itaque. Aut officiis fugiat aut iusto commodi et itaque rerum sed harum eligendi.", price_per_day: 120, user: user2 }
-atelier10 = { name: "Atelier10", address: "1 rue de Maupassant - 75116 Paris", style: "Atelier de gravure", details: "Lorem ipsum dolor sit amet. Aut itaque vitae ut facere inventore sit fuga facere aut autem quia aut quidem ipsa. Est eaque nobis est deleniti facilis ut laboriosam omnis a dolor deleniti et quibusdam earum ut sequi quam. Sit quod quia eum labore earum in error explicabo et assumenda enim ut perspiciatis dolorum.", price_per_day: 80, user: user2 }
-
-[atelier1, atelier2, atelier3, atelier4, atelier5, atelier6, atelier7, atelier8, atelier9, atelier10].each do |attributes|
-  atelier = Atelier.create!(attributes)
-  atelier.save
-  puts "Created #{atelier.name}"
-end
-
-puts "Creating reservations..."
-reservation1 = { start_date: Date.today + 1.days, end_date: Date.today + 2.days, atelier_id: Atelier.first.id, user_id: user2.id }
-reservation2 = { start_date: Date.today, end_date: Date.today + 2.days, atelier_id: Atelier.last.id, user_id: user1.id }
-
-[reservation1, reservation2].each do |attributes|
-  reservation = Reservation.create!(attributes)
-  reservation.save
-  puts "Created"
-end
-
-puts "Finished!"
