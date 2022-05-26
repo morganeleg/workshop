@@ -1,6 +1,6 @@
 <%# --User-- %>
 <% if current_user.avatar.attached? %>
-  <%= cl_image_tag(current_user.avatar.first.key,
+  <%= cl_image_tag(current_user.avatar.key,
   width: 50, height: 50, crop: :fill) %>
   <% else %>
   <%= image_tag("https://picsum.photos/400/300",
