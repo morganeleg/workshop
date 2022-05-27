@@ -41,9 +41,9 @@ atelier9 = { name: "Tizozio Labo Photo", address: "40 Rue Laffitte - 75009 Paris
 atelier10 = { name: "Atelier de tissage Kaydara", address: "30 rue Rousselet - 75007 Paris", style: "Atelier de tissage", details: "Nous mettons à votre disposition un lieu créatif et chaleureux où il est possible de venir creer vos objets en céramique brut appelé biscuit. Materiels sur place : Tour de potier, Cabine d’emaillage, Tournette de table, Balance de précision au 1/100e, Ebauchoirs en bois, Mirettes tranchantes, plates et rondes, Barbotine papier, Eponge emmanchée si vous faites de grandes pièces ou des pièces au col fermé.", price_per_day: 80, user: user2 }
 
 atelier_one = Atelier.new(atelier1)
-file1 = URI.open("https://www.biscuitatelier.com/concept?lightbox=dataItem-kd7621lq3")
-file2 = URI.open("https://www.biscuitatelier.com/concept?lightbox=dataItem-kd7621lq5")
-file3 = URI.open("https://www.biscuitatelier.com/concept?lightbox=dataItem-kd7621lo1")
+file1 = URI.open("https://images.unsplash.com/photo-1577594212897-041ace3261aa?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80")
+file2 = URI.open("https://images.unsplash.com/photo-1572725394982-fbee32027b77?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1769&q=80")
+file3 = URI.open("https://images.unsplash.com/photo-1528466829416-7c2576152a09?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80")
 atelier_one.photos.attach(io: file1, filename: "nes.png", content_type: "image/png")
 atelier_one.photos.attach(io: file2, filename: "nes.png", content_type: "image/png")
 atelier_one.photos.attach(io: file3, filename: "nes.png", content_type: "image/png")

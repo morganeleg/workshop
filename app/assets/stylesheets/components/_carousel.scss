@@ -24,9 +24,26 @@ body {
   background-size: cover;
   width: 300px;
   height: 300px;
+
+  img {
+    border-radius: 10px;
+  }
+}
+
+.swiper-slide-shadow-right{
+   background-image: none !important;
+}
+
+.swiper-slide-shadow-left{
+  background-image: none !important;
 }
 
 .swiper-slide img {
   display: block;
   width: 100%;
+}
+.carousel-inner img.d-block.w-100 {
+  min-height: 60vh;
+  max-height: 60vh;
+  object-fit: cover;
 }
