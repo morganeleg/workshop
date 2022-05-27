@@ -9,10 +9,14 @@ class AteliersController < ApplicationController
     if params[:query][:address].present? && params[:query][:style].present?
       @ateliers = @ateliers.near(params[:query][:address].to_s, 10)
       @ateliers = @ateliers.search_by_style(params[:query][:style])
+      @style = params[:query][:style]
+      @address = params[:query][:address]
     elsif !params[:query][:address].present? && params[:query][:style].present?
       @ateliers = @ateliers.search_by_style(params[:query][:style])
+      @style = params[:query][:style]
     elsif params[:query][:address].present? && !params[:query][:style].present?
       @ateliers = @ateliers.near(params[:query][:address].to_s, 10)
+      @address = params[:query][:address]
     end
     @markers = @ateliers.geocoded.map do |atelier|
       {

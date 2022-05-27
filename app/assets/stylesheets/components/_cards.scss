@@ -13,7 +13,7 @@
 
 }
 #map {
-  height: 100vh;
+
   position: sticky;
   top: 0;
 }
@@ -30,10 +30,13 @@
 
 }
 .titre {
-  background-color: white;
-  font-family: pacifico;
-  font-weight: 400;
-  font-size: 36px;
+  h2 {
+    background-color: white;
+    font-family: pacifico;
+    font-weight: 400;
+    font-size: 36px;
+  }
+
   p {
     font-family: Josefin Sans;
     font-size: 24px;
@@ -41,9 +44,8 @@
   }
 }
 .card {
-
-  border:none;
-
+  border:solid 2px transparent;
+  border-radius: 20px;
   .atelier-info {
     min-height: 150px;
     width: 100%;
@@ -52,6 +54,12 @@
     width: 100%;
     border-radius: 20px;
   }
+
+}
+.card:hover {
+
+  border:solid 2px #FF3461;
+
 }
 #img {
   width: 300px;
@@ -69,7 +77,11 @@
   font-family: pacifico;
   font-size: 20px;
   min-height: 60px;
+  a {text-decoration: none;
+    color: black;
+  }
 }
+
 .price-left {
   font-family: Josefin Sans;
   color: #FF3461;

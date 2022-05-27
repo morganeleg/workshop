@@ -1,9 +1,19 @@
 .mapboxgl-popup {
   max-width: 150px;
   border-radius: 5px;
+  img {
+    width: 100%;
+  }
 }
 
 .mapboxgl-popup-content {
   text-align: center;
   font-family: "Open Sans", sans-serif;
+}
+
+.mapboxgl-marker path {
+  transition: all 200ms ease;
+  &:hover {
+    fill: #FF3461;
+  }
 }
