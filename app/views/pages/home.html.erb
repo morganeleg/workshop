@@ -1,6 +1,5 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1595351298020-038700609878?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170);">
+<div class="banner banner-custom" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1595351298020-038700609878?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170);">
 
-  <div class="container">
     <h1>Louer votre atelier</h1>
     <p>à d’autres professionnels</p>
     <%= simple_form_for :query, url: ateliers_path, wrapper: :inline_form, html: { class: "row row-cols-lg-auto g-3 align-items-center search-input" }, method: "GET" do |f| %>
@@ -17,7 +16,6 @@
         <% end %>
       </div>
     <% end %>
-  </div>
 </div>
 <br>
 <h2 class="josefin">Nos ateliers</h2>
