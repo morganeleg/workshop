@@ -20,7 +20,7 @@ user1.avatar.attach(io: file1, filename: "nes.png", content_type: "image/png")
 user1.save!
 
 user2 = User.create(first_name: "Jacques", last_name: "Martin", address: "78 rue des plantes, 75006 Paris", phone_number: "0667093878", email: "martin@gmail.com", password: "toto2022")
-file2 = URI.open("https://voi.img.pmdstatic.net/fit/http.3A.2F.2Fprd2-bone-image.2Es3-website-eu-west-1.2Eamazonaws.2Ecom.2Fprismamedia_people.2F2017.2F06.2F30.2F5f4b5b5e-33be-444a-a631-8ef82f93f625.2Ejpeg/400x400/quality/80/jacques-martin.jpg")
+file2 = URI.open("https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Nicolas_Sarkozy_in_2010.jpg/640px-Nicolas_Sarkozy_in_2010.jpg")
 user2.avatar.attach(io: file2, filename: "nes.png", content_type: "image/png")
 user2.save!
 
