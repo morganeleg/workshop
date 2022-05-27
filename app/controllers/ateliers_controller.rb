@@ -1,6 +1,6 @@
 class AteliersController < ApplicationController
   before_action :set_atelier, only: [:show, :edit, :update, :destroy]
-  skip_before_action :authenticate_user!, only: :index
+  skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
     @ateliers = policy_scope(Atelier)
@@ -53,6 +53,7 @@ class AteliersController < ApplicationController
   def update
     @atelier.update(atelier_params)
     redirect_to dashboard_path(current_user)
+    authorize @atelier
   end
 
   def destroy

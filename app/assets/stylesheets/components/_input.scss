@@ -48,3 +48,17 @@ button {
 .mapboxgl-ctrl-geocoder--input:focus {
   outline: none !important;
 }
+
+
+
+.new_atelier {
+  select, .mapboxgl-ctrl-geocoder {
+    max-width: none !important;
+    width: 100% !important;
+    border: 1px solid #ced4da !important;
+    border-radius: 2px !important;
+    background-color: #F4F4F4 !important;
+    color: #0E0000 !important;
+    box-shadow: none !important;
+  }
+}

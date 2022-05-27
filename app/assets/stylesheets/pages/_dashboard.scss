@@ -1,0 +1,115 @@
+.profil {
+  width: 50%;
+  padding: 25px;
+  border-style: solid;
+  border-color: black;
+  border-width: 1px;
+  border-radius: 25px;
+  margin-top:  20px;
+  margin-bottom: 20px;
+    img {
+      width: 100px;
+      height: auto;
+      border-radius: 50%;
+      margin-bottom: 20px;
+    }
+    h4 {
+      font-family: "pacifico";
+      margin-bottom: 10px;
+    }
+}
+
+.vos-ateliers {
+  margin-top: 20px;
+  margin-bottom: 40px;
+  h2 {
+    font-family: "pacifico";
+    margin-bottom: 20px;
+  }
+
+}
+
+.ateliers {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  // flex-direction: row;
+  margin-bottom: 10px;
+
+  img {
+    border-radius: 5px;
+    margin-bottom: 10px;
+  }
+}
+
+.atelier {
+  box-shadow: 3px 3px 6px 2px rgba(0, 0, 0, 0.15);
+  padding: 20px;
+  margin-right: 20px;
+  border-radius: 5px;
+  height: 270px;
+  line-height: 10px;
+  a {
+    text-decoration: none;
+    font-weight:600;
+    color: #FF3460;
+  }
+  a:visited {
+    color: #FF3460;
+  }
+  a:hover {
+    opacity: 0.7;
+  }
+  h6 {
+    font-family: "pacifico";
+    margin-bottom: 20px;
+  }
+}
+
+.reservations {
+  margin-bottom: 10px;
+  h2 {
+    font-family: "pacifico";
+    margin-bottom: 10px;
+  }
+  a {
+    text-decoration: none;
+    color: #FF3460;
+    font-weight: 600;
+  }
+  a:visited {
+    color: #FF3460;
+  }
+  a:hover {
+    opacity: 0.7;
+  }
+  .atelier-strong {
+    font-weight: 600 !important;
+  }
+}
+
+.notifications {
+  line-height: 5px;
+  h2{
+    font-family: "pacifico";
+    margin-bottom: 20px;
+  }
+  a {
+    text-decoration: none;
+    color: #FF3460;
+    font-weight: 600;
+  }
+  a:visited {
+    color: #FF3460;
+  }
+  a:hover {
+    opacity: 0.7;
+  }
+}
+
+.notification {
+  border-top: 0.7px solid black;
+  padding-top: 15px;
+  margin-right: 300px;
+
+}

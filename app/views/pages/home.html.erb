@@ -27,7 +27,7 @@
 
 <div class="swiper mySwiper">
   <div class="swiper-wrapper">
-    <% Atelier.all.last(5).each do |atelier| %>
+    <% Atelier.all.last(6).each do |atelier| %>
       <div class="swiper-slide">
         <%= link_to atelier_path(atelier) do %>
           <%= cl_image_tag(atelier.photos.first.key) %>

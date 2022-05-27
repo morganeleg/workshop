@@ -35,9 +35,9 @@ user4.avatar.attach(io: file4, filename: "nes.png", content_type: "image/png")
 user4.save!
 
 user5 = User.create(first_name: "Salvador", last_name: "Dali", address: "11 Rue Poulbot, 75018 Paris", phone_number: "0178256784", email: "dali1904@wanadoo.fr", password: "toto2022")
-file2 = URI.open("https://fr.wikipedia.org/wiki/Salvador_Dal%C3%AD#/media/Fichier:Dali_Allan_Warren.jpg")
-user2.avatar.attach(io: file5, filename: "nes.png", content_type: "image/png")
-user2.save!
+file5 = URI.open("https://fr.wikipedia.org/wiki/Salvador_Dal%C3%AD#/media/Fichier:Dali_Allan_Warren.jpg")
+user5.avatar.attach(io: file5, filename: "nes.png", content_type: "image/png")
+user5.save!
 
 user6 = User.create(first_name: "Auguste", last_name: "Rodin", address: "77 Rue de Varenne, 75007 Paris", phone_number: "0144186110", email: "sculpture@yahoo.com", password: "toto2022")
 file6 = URI.open("https://fr.wikipedia.org/wiki/Le_Penseur#/media/Fichier:Le_Penseur_in_the_Jardin_du_Mus%C3%A9e_Rodin,_Paris_March_2014.jpg")
@@ -63,9 +63,9 @@ atelier9 = { name: "Tizozio Labo Photo", address: "40 Rue Laffitte - 75009 Paris
 atelier10 = { name: "Atelier de tissage Kaydara", address: "30 rue Rousselet - 75007 Paris", style: "Atelier de tissage", details: "Nous mettons à votre disposition un lieu créatif et chaleureux où il est possible de venir creer vos objets en céramique brut appelé biscuit. Materiels sur place : Tour de potier, Cabine d’emaillage, Tournette de table, Balance de précision au 1/100e, Ebauchoirs en bois, Mirettes tranchantes, plates et rondes, Barbotine papier, Eponge emmanchée si vous faites de grandes pièces ou des pièces au col fermé.", price_per_day: 80, user: user5 }
 
 atelier_one = Atelier.new(atelier1)
-file1 = URI.open("https://www.biscuitatelier.com/concept?lightbox=dataItem-kd7621lq3")
-file2 = URI.open("https://www.biscuitatelier.com/concept?lightbox=dataItem-kd7621lq5")
-file3 = URI.open("https://www.biscuitatelier.com/concept?lightbox=dataItem-kd7621lo1")
+file1 = URI.open("https://images.unsplash.com/photo-1577594212897-041ace3261aa?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80")
+file2 = URI.open("https://images.unsplash.com/photo-1572725394982-fbee32027b77?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1769&q=80")
+file3 = URI.open("https://images.unsplash.com/photo-1528466829416-7c2576152a09?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80")
 atelier_one.photos.attach(io: file1, filename: "nes.png", content_type: "image/png")
 atelier_one.photos.attach(io: file2, filename: "nes.png", content_type: "image/png")
 atelier_one.photos.attach(io: file3, filename: "nes.png", content_type: "image/png")
@@ -153,16 +153,4 @@ atelier_ten.photos.attach(io: file1, filename: "nes.png", content_type: "image/p
 atelier_ten.save!
 
 puts "Ateliers created"
-
-
-puts "Creating reservations..."
-reservation1 = { start_date: Date.today + 1.days, end_date: Date.today + 2.days, atelier_id: Atelier.first.id, user_id: user2.id }
-reservation2 = { start_date: Date.today, end_date: Date.today + 2.days, atelier_id: Atelier.last.id, user_id: user1.id }
-
-[reservation1, reservation2].each do |attributes|
-  reservation = Reservation.create!(attributes)
-  reservation.save
-end
-
-puts " Reservations Created"
 puts " Vous etes trop forts!!!!!"

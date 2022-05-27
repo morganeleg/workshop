@@ -21,6 +21,9 @@ class AtelierPolicy < ApplicationPolicy
     user == record.user
   end
 
+  def update?
+    edit?
+  end
 
   def new?
     true

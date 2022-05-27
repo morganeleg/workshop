@@ -1,5 +1,14 @@
 .container {
   font-family: 'Josefin Sans';
+  display: flex;
+  margin-top: 50px;
+}
+
+.container-details {
+  justify-content: space-between;
+  margin: auto;
+  padding: 20px;
+
 }
 
 .title {
@@ -10,8 +19,14 @@
   font-weight: 700;
 }
 
-.header {
-  margin-top: 20px;
+.undertitle{
+ font-family: 'Pacifico';
+ font: size 30px; ;
+}
+
+.texte{
+  font-family: 'Josefin Sans';
+  font: size 18px; ;
 }
 
 .photos_atelier {
@@ -26,13 +41,8 @@
   }
 }
 
-.container-details {
-  display: flex;
-  justify-content: space-between;
-  margin: 20px auto;
-
-  .details {
-    width: 48% ;
-
-  }
+#proprietaire{
+  font-family: 'Pacifico';
+  font: size 16px;
+  color: crimson;
 }
