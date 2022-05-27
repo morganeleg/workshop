@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container-atelier">
   <div class= "col-12 col-md-6">
     <div class= "container-details">
       <h1 class="title"><%= @atelier.name %></h1>
@@ -41,7 +41,7 @@
           </a>
       </div>
 
-      <div class="card_reservation container-details w-100">
+      <div class="card_reservation container-details w-100 mb-3">
           <h4>Prix par jour : <span class="strong"><%= @atelier.price_per_day %>€</span></h4>
             <%= simple_form_for [@atelier, @reservation] do |f| %>
               <%= f.input :start_date%>
