@@ -6,7 +6,7 @@
       <%= f.input :style, label: false, include_blank: "Style d'atelier",
                   collection:["Atelier cuisine", "Atelier broderie","Atelier photographie", "Atelier de tissage", "Atelier de cuir", "Atelier de poterie", "Atelier de textile", "Atelier de gravure"],
                   :input_html => { :class => 'input' }, wrapper_html: { class: "m-0"} %>
-      <p class="color-black">Adresse</p>
+      <p class="color-black">Adresse :</p>
       <%= f.input :address,
                   input_html: {data: {address_autocomplete_target: "address"}, class: "d-none"},
                   wrapper_html: {class: "m-0", data: {controller: "address-autocomplete", address_autocomplete_api_key_value: ENV["MAPBOX_API_KEY"]}} %>
