@@ -37,9 +37,9 @@
             <%= f.input :start_date%>
             <%= f.input :end_date%>
             <% if @atelier.user == current_user %>
-              <%= f.submit class: "btn btn-primary disabled"%>
+              <%= f.button :submit, class: "button disabled"%>
             <% else %>
-              <%= f.submit class: "btn btn-primary"%>
+              <%= f.button :submit, class: "button"%>
             <% end %>
           <% end %>
 
