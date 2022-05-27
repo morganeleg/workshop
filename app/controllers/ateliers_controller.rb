@@ -49,6 +49,7 @@ class AteliersController < ApplicationController
   def update
     @atelier.update(atelier_params)
     redirect_to dashboard_path(current_user)
+    authorize @atelier
   end
 
   def destroy
