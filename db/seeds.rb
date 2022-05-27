@@ -131,16 +131,4 @@ atelier_ten.photos.attach(io: file1, filename: "nes.png", content_type: "image/p
 atelier_ten.save!
 
 puts "Ateliers created"
-
-
-puts "Creating reservations..."
-reservation1 = { start_date: Date.today + 1.days, end_date: Date.today + 2.days, atelier_id: Atelier.first.id, user_id: user2.id }
-reservation2 = { start_date: Date.today, end_date: Date.today + 2.days, atelier_id: Atelier.last.id, user_id: user1.id }
-
-[reservation1, reservation2].each do |attributes|
-  reservation = Reservation.create!(attributes)
-  reservation.save
-end
-
-puts " Reservations Created"
 puts " Vous etes trop forts!!!!!"
