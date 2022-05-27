@@ -3,3 +3,48 @@
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 50px;
 }
+
+form.simple_form.row.row-cols-lg-auto.g-3.align-items-center.search-input {
+  background: white;
+  border-radius: 20px;
+  width: max-content;
+  select, .query_address, .query_style, .mapboxgl-ctrl-geocoder.mapboxgl-ctrl {
+    border: none;
+    box-shadow: none;
+    font-weight: 600;
+    margin: 0 !important;
+  }
+}
+
+
+input.mapboxgl-ctrl-geocoder--input::placeholder {
+  color: transparent;
+}
+
+svg.mapboxgl-ctrl-geocoder--icon.mapboxgl-ctrl-geocoder--icon-search {
+  display: none;
+}
+
+p.color-black {
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: 1.5;
+  letter-spacing: normal;
+}
+
+.fas, .fa-solid {
+  color: red;
+}
+
+button {
+  border: 0;
+  background: transparent;
+}
+
+.col-12 {
+  margin: 0 2px 0 0 !important;
+}
+
+.mapboxgl-ctrl-geocoder--input:focus {
+  outline: none !important;
+}

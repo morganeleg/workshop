@@ -123,11 +123,11 @@ atelier_nine.save!
 
 atelier_ten = Atelier.new(atelier10)
 file1 = URI.open("https://www.ensad.fr/sites/default/files/styles/adaptive_width_719/adaptive-image/public/dlc_9573_1.jpg?itok=hISGcOuA")
-file2 = URI.open("https://www.paris-ateliers.org/thumb/?q=90&zc=1&w=1015&h=500&src=/fichier/i_diapo/1331/p1260964.jpg&f=jpg")
-file3 = URI.open("https://www.paris-ateliers.org/thumb/?q=90&zc=1&w=1015&h=500&src=/fichier/i_diapo/1334/p1260957.jpg&f=jpg")
+# file2 = URI.open("https://www.paris-ateliers.org/thumb/?q=90&zc=1&w=1015&h=500&src=/fichier/i_diapo/1331/p1260964.jpg&f=jpg")
+# file3 = URI.open("https://www.paris-ateliers.org/thumb/?q=90&zc=1&w=1015&h=500&src=/fichier/i_diapo/1334/p1260957.jpg&f=jpg")
 atelier_ten.photos.attach(io: file1, filename: "nes.png", content_type: "image/png")
-atelier_ten.photos.attach(io: file2, filename: "nes.png", content_type: "image/png")
-atelier_ten.photos.attach(io: file3, filename: "nes.png", content_type: "image/png")
+# atelier_ten.photos.attach(io: file2, filename: "nes.png", content_type: "image/png")
+# atelier_ten.photos.attach(io: file3, filename: "nes.png", content_type: "image/png")
 atelier_ten.save!
 
 puts "Ateliers created"
