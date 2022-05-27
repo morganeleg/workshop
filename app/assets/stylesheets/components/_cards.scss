@@ -34,7 +34,11 @@
   font-family: pacifico;
   font-weight: 400;
   font-size: 36px;
-
+  p {
+    font-family: Josefin Sans;
+    font-size: 24px;
+    text-align: center;
+  }
 }
 .card {
 
@@ -55,11 +59,7 @@
   border-radius: 10px;
   margin: 0px;
 }
-p {
-  font-family: Josefin Sans;
-  font-size: 24px;
-  text-align: center;
-}
+
 .style-details {
   font-family: Josefin Sans;
   font-size: 20px;
@@ -79,6 +79,6 @@ p {
 
 body {
   background-color: white;
-  margin:10px;
+
   padding-bottom: 180px;
 }
