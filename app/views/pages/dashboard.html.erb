@@ -1,63 +1,78 @@
-<%# --User-- %>
-
 <div class="container">
   <div class="row">
-    <div class="col-12 col-md-6">
-      <% if current_user.avatar.attached? %>
-        <%= cl_image_tag(current_user.avatar.key,
-        width: 50, height: 50, crop: :fill) %>
-        <% else %>
-        <%= image_tag("https://picsum.photos/400/300",
-        width: 50, height: 50, crop: :fill)%>
-      <% end %>
-      <h4><%= current_user.first_name %> <%= current_user.last_name %></h4>
-      <p>Adresse : <%= current_user.address %></p>
-      <p>Numéro de téléphone :<%= current_user.phone_number %></p>
-      <p>Email : <%= current_user.email %></p>
+
+    <div class="col-sm-12 col-md-6 col-lg-6">
+      <div class="profil">
+        <% if current_user.avatar.attached? %>
+          <%= cl_image_tag(current_user.avatar.key,
+          width: 50, height: 50, crop: :fill) %>
+          <% else %>
+          <%= image_tag("https://picsum.photos/400/300",
+          width: 50, height: 50, crop: :fill)%>
+        <% end %>
+        <h4><%= current_user.first_name %> <%= current_user.last_name %></h4>
+        <p>Adresse : <%= current_user.address %></p>
+        <p>Numéro de téléphone :<%= current_user.phone_number %></p>
+        <p>Email : <%= current_user.email %></p>
+      </div>
+    </div>
+
+    <div class="col-sm-12 col-md-6 col-lg-6 vos-ateliers">
+      <h2>Vos ateliers</h2>
+      <div class="ateliers">
+
+        <% current_user.ateliers.each do |atelier| %>
+          <div class="atelier">
+            <% if atelier.photos.attached? %>
+            <%= link_to (cl_image_tag(atelier.photos.first.key,
+            width: 200, height: 150, crop: :fill)), atelier_path(atelier.id)  %>
+            <% else %>
+            <%= link_to (image_tag("https://picsum.photos/400/300",
+            width: 200, height: 150, crop: :fill)), atelier_path(atelier.id) %>
+            <% end %>
+            <h6><%= atelier.name %></h6>
+            <p><%= link_to 'Modifier', edit_atelier_path(atelier.id)%></p>
+            <p><%= link_to "Supprimer",
+            atelier_path(atelier),
+            data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+            %></p>
+          </div>
+        <% end %>
+      </div>
+
+      <%= link_to 'Ajouter un atelier', new_atelier_path, class: "btn button" %>
     </div>
   </div>
+
+  <div class="row">
+
+    <div class="col-sm-12 col-md-6 col-lg-6">
+      <div class="notifications">
+      <h2>Vos notifications:</h2>
+        <% current_user.reservations.each do |reservation| %>
+          <div class="notification">
+            <p><%= "Réservation de #{reservation.user.first_name} #{reservation.user.last_name}" %></p>
+            <p><%= "Du #{reservation.start_date} au #{reservation.end_date}" %></p>
+            <p><%= reservation.atelier.name %></p>
+            <p><%= link_to "Annuler", atelier_reservation_path(reservation.atelier, reservation), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %></p>
+          </div>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="col-sm-12 col-md-6 col-lg-6">
+
+      <div class="reservations">
+      <h2>Vos réservations:</h2>
+
+        <% current_user.reserved.each do |reservation| %>
+          <p><span class="atelier-strong"><%= reservation.atelier.name %></span> : <%="du #{reservation.start_date} au #{reservation.end_date}" %>   <%= link_to "Annuler", atelier_reservation_path(reservation.atelier, reservation), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %></p>
+          <p></p>
+        <% end %>
+      </div>
+    </div>
+
+  </div>
+
+
 </div>
-
-<%# --Ateliers à louer-- %>
-<ul>
-  <% current_user.ateliers.each do |atelier| %>
-    <% if atelier.photos.attached? %>
-    <%= cl_image_tag(atelier.photos.first.key,
-    width: 200, height: 150, crop: :fill) %>
-    <% else %>
-    <%= image_tag("https://picsum.photos/400/300",
-    width: 200, height: 150, crop: :fill)%>
-    <% end %>
-    <li><%= link_to atelier.name, atelier_path(atelier.id) %></li>
-    <li><%= link_to 'Edit', edit_atelier_path(atelier.id)%></li>
-    <li><%= link_to "Delete",
-    atelier_path(atelier),
-    data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
-    %></li>
-  <% end %>
-</ul>
-
-<%= link_to 'New atelier', new_atelier_path %>
-
-<%# --Réservations dans atelier(s) du user-- %>
-<h2>Notifications:</h2>
-<ul>
-  <% current_user.reservations.each do |reservation| %>
-    <li><%= "Réservation de #{reservation.user.first_name} #{reservation.user.last_name}" %></li>
-    <li><%= reservation.atelier.name %></li>
-    <li><%= reservation.start_date %></li>
-    <li><%= reservation.end_date %></li>
-    <li><%= link_to "Annuler", atelier_reservation_path(reservation.atelier, reservation), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
-    %></li>
-  <% end %>
-</ul>
-
-<%# --Réservations dans atelier(s) d'autre(s) user(s)-- %>
-<h2>Mes réservations:</h2>
-<ul>
-  <% current_user.reserved.each do |reservation| %>
-    <li><%= reservation.atelier.name %></li>
-    <li><%= reservation.start_date %></li>
-    <li><%= reservation.end_date %></li>
-    <li><%= link_to "Annuler", atelier_reservation_path(reservation.atelier, reservation), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %></li>
-  <% end %>
